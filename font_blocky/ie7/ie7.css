@@ -1,0 +1,94 @@
+.icon-o {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x6f;');
+}
+.icon-0 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x30;');
+}
+.icon-1 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x31;');
+}
+.icon-2 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x32;');
+}
+.icon-3 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x33;');
+}
+.icon-4 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x34;');
+}
+.icon-5 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x35;');
+}
+.icon-6 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x36;');
+}
+.icon-7 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x37;');
+}
+.icon-8 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x38;');
+}
+.icon-9 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x39;');
+}
+.icon-10 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x41;');
+}
+.icon-11 {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x42;');
+}
+.icon-a {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x61;');
+}
+.icon-comma {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x2c;');
+}
+.icon-e {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x65;');
+}
+.icon-g {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x67;');
+}
+.icon-h {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x68;');
+}
+.icon-i {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x69;');
+}
+.icon-j {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x6a;');
+}
+.icon-k {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x6b;');
+}
+.icon-n {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x6e;');
+}
+.icon-N {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x4e;');
+}
+.icon-period {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x2e;');
+}
+.icon-s {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x73;');
+}
+.icon-sh {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x283;');
+}
+.icon-th {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x3b8;');
+}
+.icon-uu {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x26f;');
+}
+.icon-vowel_holder {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x5f;');
+}
+.icon-X {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x58;');
+}
+.icon-z {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x7a;');
+}
+

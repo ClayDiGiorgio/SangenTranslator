@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<html lang="en-US">
+	
+		<meta charset="utf-8">
+		<meta name="author" content="Clay">
+		<meta name="description" content="Compiles a trie that allows for translation to English from the conlang.">
+		
+		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+		<link rel="stylesheet" href="font_blocky/style.css">
+		<title>Dictionary Trie Builder</title>
+	</head>
+	<body>
+		<p>
+			<h1>Trie Builder</h1>
+		</p>
+		<p>
+			Please copy/paste the word and definition columns of the conlang's dictionary spreadsheet
+		</p>
+		<p>
+			<textarea id="input" name="user input"></textarea>
+		</p>
+		<p>
+			<button id="process input">Process Input</button>
+		</p>
+		<p>
+			<p>
+				JSON encoding of the resultant trie:
+			</p>
+			<textarea id="output" readonly>
+				
+			</textarea>
+		</p>
+	</body>
+	<script>
+		const userInput = document.getElementById('input');
+		const output = document.getElementById('output');
+		const button = document.getElementById('process input');
+
+		button.addEventListener('click', function (event) {
+			var userInputText = userInput.value;
+			var entries = userInputText.split("\n");
+			
+			var trie = {values:[]};
+			trie.values = [];
+			
+			for(var i = 0; i < entries.length; i++) {
+				var entry = entries[i].split("\t");
+				var word = entry.shift();
+				
+				console.log(entry);
+				
+				if(word == "" || word == undefined) {
+					continue;
+				}	
+				
+				trieInsert(trie, word, entry);
+			}
+			console.log(trie);
+			output.innerText = JSON.stringify(trie, null, '\t');
+		});
+		
+		function trieInsert(trie, key, dataArray) {
+			for(var i = 0; i < key.length; i++) {
+				if(trie[key.charAt(i)] == undefined) {
+					trie[key.charAt(i)] = {values:[]};
+				}
+				trie = trie[key.charAt(i)];
+			}
+			
+			trie.values = trie.values.concat(dataArray);
+		}
+	</script>
+</html>
+
+

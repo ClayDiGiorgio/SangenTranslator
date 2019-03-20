@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<html lang="en-US">
+	
+		<meta charset="utf-8">
+		<meta name="author" content="Clay">
+		<meta name="description" content="Translates phonetic spellings of words from our dragon conlang into rough English.">
+		
+		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+		<link rel="stylesheet" href="font_blocky/style.css">
+		<title>Simple Translator</title>
+	</head>
+	<body>
+		<p>
+			<h1>Translator</h1>
+		</p>
+		<p>
+			Please write in Sangen using either English phonetic spelling, IPA characters, or a mix of the two (eg "sXakesh" or "sXakeʃ")
+		</p>
+		<p>
+			Your input:
+			<textarea id="conlang input" name="user input"> gɯnis oasXeja gosonis. </textarea>
+		</p>
+		<p>
+			<button id="translate input">Translate</button>
+		</p>
+		<p>
+			<p class="label">
+				Transcription of your input: 
+			</p>
+			<p class="output">
+				<font face='dragonConlang_blocky' size=20 id="transcribed text">gɯnis oasXeja gosonis .</font>
+			</p>
+		</p>
+		<p>
+			<p class="label">
+				Translation of your input: 
+			</p>
+			<p class="output">
+				<em id="translated text">You're a stupid egg.</em>
+			</p>
+		</p>
+	</body>
+	<script src="dictionary_toEnglish.js"></script>
+	<script src="translationScript.js"></script>
+	<script src="transcriber.js"></script>
+	<script name="translator">
+		const translation = document.getElementById('translated text');
+		const button = document.getElementById('translate input');
+
+		button.addEventListener('click', function (event) {
+			translation.innerText = translateToEnglish(userInput.innerText);
+		});
+	</script>
+</html>
+
+
