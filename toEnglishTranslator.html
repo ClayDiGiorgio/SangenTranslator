@@ -50,7 +50,7 @@
 		const button = document.getElementById('translate input');
 
 		button.addEventListener('click', function (event) {
-			translation.innerText = translateToEnglish(userInput.innerText);
+			translation.innerText = translateFromSangen(userInput.value, dictionary);
 		});
 	</script>
 </html>

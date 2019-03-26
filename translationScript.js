@@ -1,20 +1,30 @@
-function translateToEnglish(conlangText) {
-	console.log(dictionary);
-	var toEnglishDictionary = JSON.parse(dictionary);
+function translateFromSangen(conlangText, toEnglishDictionary) {
+	//var toEnglishDictionary = dictionary;//JSON.parse(dictionary);
 
-	var words = conlangText.replace(/\./g, "").replace(/\,/g, "").split(" ");
+	console.log(conlangText);
+	
+	// remove all punctuation from text, split text into individual words, remove all empty strings from that list of words
+	var words = conlangText.replace(/\./g, "").replace(/,/g, "").split(" ").filter(word => word.length > 0);
+	
+	console.log(words);
 	
 	var translation = "";
-	for(word in words) {
-		var translatedWord = trieGet(toEnglishDictionary, word)[0];
-		if(translatedWord == undefined) {
+	for(var i = 0; i < words.length; i++) {
+		word = words[i];
+	
+		// remove the part of speech modifier
+		var translatedWord = trieGet(toEnglishDictionary, word)[0].replace(/\(.\) /, "");
+		
+		if(translatedWord.startsWith("noentry") || translatedWord.startsWith("nodefinition")) {
+			// no definition found so this may be a conjugated verb, try to remove a two vowel prefix
+			// and then try again
 			var prefix = word.substring(0,2);
 			word = word.substring(2);
 			
-			translatedWord = trieGet(toEnglishDictionary, prefix)[0] + trieGet(toEnglishDictionary, word)[0];
+			translatedWord = trieGet(toEnglishDictionary, prefix)[0].replace(/\(.\) /, "") + trieGet(toEnglishDictionary, word)[0].replace(/\(.\) /, "");
 		}
 		
-		translation = translation + translatedWord + " ";
+		translation = translation + "[" + translatedWord + "] ";
 	}
 	
 	return translation;
@@ -23,9 +33,14 @@ function translateToEnglish(conlangText) {
 function trieGet(trie, key) {
 	for(var i = 0; i < key.length; i++) {
 		if(trie == undefined)
-			return undefined;
+			break;
 		trie = trie[key.charAt(i)];
 	}
+	
+	if(trie == undefined)
+		return ["noentry_"+key];
+	if(trie.values == undefined)
+		return ["nodefinition_"+key];
 	
 	return trie.values;
 }
