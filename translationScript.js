@@ -1,33 +1,76 @@
-function translateFromSangen(conlangText, toEnglishDictionary) {
+function translateFromSangen(conlangText, toEnglishDictionary, translatedTextElement) {
 	//var toEnglishDictionary = dictionary;//JSON.parse(dictionary);
 
 	console.log(conlangText);
 	
 	// remove all punctuation from text, split text into individual words, remove all empty strings from that list of words
-	var words = conlangText.replace(/\./g, "").replace(/,/g, "").split(" ").filter(word => word.length > 0);
+	//var words = conlangText.replace(/\./g, "").replace(/,/g, "").split(" ").filter(word => word.length > 0);
 	
-	console.log(words);
+	// change latin into regular ipa 
+	conlangText = formatSangen(conlangText);
+	var words = conlangText.replace(/\./g, "").replace(/,/g, "").split(" ").filter(word => word.length > 0); // split into array of words, remove empty strings
 	
 	var translation = "";
 	for(var i = 0; i < words.length; i++) {
 		word = words[i];
 	
-		// remove the part of speech modifier
-		var translatedWord = trieGet(toEnglishDictionary, word)[0].replace(/\(.\) /, "");
+		var translatedWord = "";
 		
-		if(translatedWord.startsWith("noentry") || translatedWord.startsWith("nodefinition")) {
+		// remove the part of speech modifier from every entry in this word's meanings
+		translatedWord = trieGet(toEnglishDictionary, word);//[0].replace(/\(.\) /, "");
+	
+		if(translatedWord[0].startsWith("noentry") || translatedWord[0].startsWith("nodefinition")) {
 			// no definition found so this may be a conjugated verb, try to remove a two vowel prefix
 			// and then try again
 			var prefix = word.substring(0,2);
 			word = word.substring(2);
-			
-			translatedWord = trieGet(toEnglishDictionary, prefix)[0].replace(/\(.\) /, "") + trieGet(toEnglishDictionary, word)[0].replace(/\(.\) /, "");
+		
+			prefix = trieGet(toEnglishDictionary, prefix);//[0].replace(/\(.\) /, "");
+			word   = trieGet(toEnglishDictionary, word);  //[0].replace(/\(.\) /, "");
+						
+			if(prefix[0].startsWith("noentry") || prefix[0].startsWith("nodefinition") ||
+			   word[0].  startsWith("noentry") || word[0].  startsWith("nodefinition")) {
+				// I didn't feel like DeMorgan's-ing the above condition. This body left blank
+				// so I can use the else statement
+			} else {
+				//translatedWord = prefix+ ": " + word;	
+				
+				// prefixes only have one meaning: the tense of the attatched verb
+				var prefixElement = document.createElement("SPAN");
+				prefixElement.innerText = "" + prefix[0] + "->";
+				translatedTextElement.appendChild(prefixElement);
+		
+				// update the actual meaning of the word to the meaning of the root verb
+				translatedWord = word;//.map(function (e){e = e.replace(/\(.\) /, "")});
+			}
 		}
 		
-		translation = translation + "[" + translatedWord + "] ";
+		//translation = translation + "[" + translatedWord + "] ";
+		
+		if(translatedWord.length == 1) {
+			var wordElement = document.createElement("SPAN");
+			wordElement.className = "translated word single";
+			wordElement.innerText = translatedWord[0].replace(/\(.\) /, "");
+			translatedTextElement.appendChild(wordElement);
+		} else {
+			var dropdown = document.createElement("SELECT");
+			dropdown.className = "translated word dropdown";
+			
+			for(var j = 0; j < translatedWord.length; j++) {
+				dropdown.options.add(new Option(translatedWord[j]));//.replace(/\(.\) /, "")));
+			}
+			
+			translatedTextElement.appendChild(dropdown);
+		}
+		
+		var spaceElement = document.createElement("SPAN");
+		spaceElement.className = "translated word space";
+		spaceElement.innerText = " ";
+		translatedTextElement.appendChild(spaceElement);
 	}
 	
-	return translation;
+	//translatedTextElement.innerText = translation;
+	//return translation;
 }
 
 function trieGet(trie, key) {

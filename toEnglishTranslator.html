@@ -38,7 +38,9 @@
 				Translation of your input: 
 			</p>
 			<p class="output">
-				<em id="translated text">You're a stupid egg.</em>
+				<b  id="translated text">
+					
+				</b>
 			</p>
 		</p>
 	</body>
@@ -48,9 +50,17 @@
 	<script name="translator">
 		const translation = document.getElementById('translated text');
 		const button = document.getElementById('translate input');
+		translateFromSangen(userInput.value, dictionary, translation);
 
 		button.addEventListener('click', function (event) {
-			translation.innerText = translateFromSangen(userInput.value, dictionary);
+			// clear the previous translation
+			var total = translation.children.length
+			for(var i = 0; i < total; i++) {
+				translation.children[0].remove();
+			}
+			
+			// create the new translation
+			translateFromSangen(userInput.value, dictionary, translation);
 		});
 	</script>
 </html>

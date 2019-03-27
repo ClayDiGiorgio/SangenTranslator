@@ -42,8 +42,7 @@
 			var userInputText = userInput.value;
 			var entries = userInputText.split("\n");
 			
-			var trie = {values:[]};
-			trie.values = [];
+			var trie = {};
 			
 			for(var i = 0; i < entries.length; i++) {
 				var entry = entries[i].split("\t");
@@ -64,12 +63,16 @@
 		function trieInsert(trie, key, dataArray) {
 			for(var i = 0; i < key.length; i++) {
 				if(trie[key.charAt(i)] == undefined) {
-					trie[key.charAt(i)] = {values:[]};
+					trie[key.charAt(i)] = {};
 				}
 				trie = trie[key.charAt(i)];
 			}
 			
-			trie.values = trie.values.concat(dataArray);
+			if(trie.values == undefined) {
+				trie.values = [];
+			}
+			
+			trie.values = trie.values.concat(dataArray.filter(word => word.length > 0));
 		}
 	</script>
 </html>

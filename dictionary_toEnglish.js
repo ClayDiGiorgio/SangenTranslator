@@ -1,42 +1,32 @@
-const dictionary = { 
+const dictionary = {
 	"o": {
 		"a": {
 			"values": [
-				"(habitual present)",
-				"",
-				""
+				"(habitual/prolonged present)"
 			]
 		},
 		"e": {
 			"values": [
-				"(current present)",
-				"",
-				""
+				"(current/temporary present)"
 			]
 		}
 	},
 	"ɯ": {
 		"e": {
 			"values": [
-				"(future)",
-				"",
-				""
+				"(future)"
 			]
 		}
 	},
 	"i": {
 		"a": {
 			"values": [
-				"(habitual past)",
-				"",
-				""
+				"(repeated past)"
 			]
 		},
 		"e": {
 			"values": [
-				"(past)",
-				"",
-				""
+				"(past)"
 			]
 		}
 	},
@@ -44,18 +34,14 @@ const dictionary = {
 		"a": {
 			"n": {
 				"values": [
-					"my beloved (typically addressed to those who aare younger or need caretaking)",
-					"",
-					""
+					"(honorific) my beloved (typically addressed to those who are younger or need caretaking)"
 				]
 			},
 			"h": {
 				"ɯ": {
 					"e": {
 						"values": [
-							"(?) because",
-							"",
-							""
+							"(?) because"
 						]
 					}
 				}
@@ -64,10 +50,48 @@ const dictionary = {
 		"i": {
 			"n": {
 				"values": [
-					"my (universal, though may be rude if a more specific honorific exists)",
-					"",
-					""
+					"(honorific) my friend/relative"
 				]
+			},
+			"ɯ": {
+				"values": [
+					"(n) cat",
+					"(n) (colloquial) soft one with hidden claws (used to describe people, positive connotation)"
+				],
+				"n": {
+					"e": {
+						"values": [
+							"(n) suspicious silence",
+							"(v) to sneak"
+						]
+					}
+				}
+			}
+		},
+		"e": {
+			"θ": {
+				"values": [
+					"(n) hope"
+				]
+			},
+			"n": {
+				"a": {
+					"z": {
+						"ɯ": {
+							"ʃ": {
+								"values": [
+									"(n) wing",
+									"(v) to travel"
+								]
+							}
+						}
+					},
+					"n": {
+						"values": [
+							"(n) arm"
+						]
+					}
+				}
 			}
 		}
 	},
@@ -75,30 +99,23 @@ const dictionary = {
 		"ɯ": {
 			"n": {
 				"values": [
-					"my estranged",
-					"",
-					""
+					"(honorific) my estranged"
 				],
 				"e": {
-					"values": [
-						"(e) a swear, refers to exile",
-						"",
-						""
-					],
 					"k": {
 						"values": [
-							"my dishonored/exiled",
-							"",
-							""
+							"(honorific) my dishonored/exiled"
 						],
 						"e": {
 							"values": [
 								"(n) exile",
-								"(v) to be in exile",
-								""
+								"(v) to be in exile"
 							]
 						}
-					}
+					},
+					"values": [
+						"(e) a swear, refers to exile"
+					]
 				},
 				"i": {
 					"θ": {
@@ -107,11 +124,48 @@ const dictionary = {
 								"e": {
 									"values": [
 										"(n) barbarians, ones who are exiled",
-										"(v) to raid",
-										""
+										"(v) to raid"
 									]
 								}
 							}
+						}
+					}
+				},
+				"a": {
+					"values": [
+						"number/count"
+					],
+					"n": {
+						"i": {
+							"values": [
+								"few"
+							]
+						}
+					},
+					"a": {
+						"values": [
+							"dozen"
+						]
+					}
+				}
+			},
+			"N": {
+				"a": {
+					"values": [
+						"countless"
+					]
+				}
+			},
+			"s": {
+				"values": [
+					"stars "
+				],
+				"ʃ": {
+					"e": {
+						"k": {
+							"values": [
+								"sparkles (star stuff)"
+							]
 						}
 					}
 				}
@@ -119,22 +173,27 @@ const dictionary = {
 		},
 		"e": {
 			"values": [
-				"(art) about",
-				"",
-				""
+				"(art) about"
 			],
+			"g": {
+				"values": [
+					"delicate"
+				]
+			},
+			"ʃ": {
+				"values": [
+					"heavy/difficult"
+				]
+			},
 			"n": {
 				"e": {
 					"values": [
 						"(n) disfavorable wind",
-						"(n) antagonist(ic force)",
-						""
+						"(n) antagonist(ic force)"
 					],
 					"k": {
 						"values": [
-							"(v) to fight / actively oppose",
-							"",
-							""
+							"(v) to fight / actively oppose"
 						]
 					}
 				},
@@ -148,9 +207,7 @@ const dictionary = {
 						"n": {
 							"i": {
 								"values": [
-									"(n) an insult",
-									"",
-									""
+									"(n) an insult"
 								]
 							}
 						}
@@ -159,8 +216,7 @@ const dictionary = {
 				"a": {
 					"values": [
 						"(n) weak headwind",
-						"(n) troublemaker (endearing)",
-						""
+						"(n) troublemaker (endearing)"
 					]
 				}
 			},
@@ -168,8 +224,7 @@ const dictionary = {
 				"e": {
 					"values": [
 						"(n) strong headwind",
-						"(n) an enemy",
-						""
+						"(n) an enemy"
 					]
 				},
 				"k": {
@@ -177,9 +232,7 @@ const dictionary = {
 						"g": {
 							"i": {
 								"values": [
-									"(n) a strong (swear) insult (worse than useless)",
-									"",
-									""
+									"(n) a strong (swear) insult (worse than useless)"
 								]
 							}
 						}
@@ -189,11 +242,43 @@ const dictionary = {
 			"k": {
 				"e": {
 					"values": [
-						"(n) theif / mooch",
-						"",
-						""
+						"(n) theif / mooch"
+					]
+				},
+				"i": {
+					"values": [
+						"(n) bird",
+						"(v) to flee / run from danger",
+						"(n) coward"
 					]
 				}
+			},
+			"s": {
+				"a": {
+					"n": {
+						"s": {
+							"values": [
+								"whilte"
+							]
+						}
+					}
+				},
+				"i": {
+					"n": {
+						"s": {
+							"values": [
+								"black"
+							]
+						}
+					}
+				}
+			}
+		},
+		"i": {
+			"n": {
+				"values": [
+					"metal"
+				]
 			}
 		}
 	},
@@ -202,17 +287,30 @@ const dictionary = {
 			"j": {
 				"ɯ": {
 					"values": [
-						"my honored (deceased)",
-						"",
-						""
+						"(honorific) my honored (deceased)"
 					]
+				},
+				"e": {
+					"values": [
+						"(n) life"
+					],
+					"ʃ": {
+						"a": {
+							"values": [
+								"(n) animal",
+								"(v) (archaic) to be active"
+							]
+						}
+					}
 				}
 			},
+			"values": [
+				"(art) indicates the following phrase is a question"
+			],
 			"k": {
 				"values": [
 					"(v) to have heard/read that",
-					"(n) a book",
-					""
+					"(n) a book"
 				],
 				"e": {
 					"θ": {
@@ -223,182 +321,249 @@ const dictionary = {
 						]
 					}
 				}
+			},
+			"ʃ": {
+				"values": [
+					"tree"
+				],
+				"s": {
+					"X": {
+						"a": {
+							"values": [
+								"forest"
+							]
+						}
+					}
+				},
+				"n": {
+					"j": {
+						"e": {
+							"k": {
+								"values": [
+									"wood/wood product"
+								]
+							}
+						}
+					}
+				}
 			}
 		},
 		"e": {
 			"j": {
 				"e": {
 					"values": [
-						"my renowned / honored (living)",
-						"",
-						""
+						"(honorific) my renowned / honored (living)"
 					]
 				}
-			}
-		},
-		"a": {
-			"values": [
-				"my noble (typically addressed to elders or superiors)",
-				"",
-				""
-			]
-		}
-	},
-	"n": {
-		"i": {
-			"values": [
-				"(art) indicates the following noun is a direct object",
-				"",
-				""
-			],
-			"h": {
-				"ɯ": {
-					"e": {
-						"values": [
-							"(v) to predict",
-							"(n) a prediction",
-							""
-						]
-					}
-				}
 			},
-			"g": {
-				"o": {
-					"s": {
-						"o": {
-							"n": {
-								"values": [
-									"(adj) young",
-									"(n) youngster",
-									""
-								]
-							}
-						}
-					}
-				}
-			}
-		},
-		"j": {
-			"e": {
-				"k": {
-					"values": [
-						"(n) construction",
-						"(v) to create",
-						""
-					],
-					"e": {
-						"ʃ": {
-							"values": [
-								"(v) to haul",
-								"(n) colloquial - something heavy",
-								""
-							]
-						},
-						"g": {
-							"values": [
-								"(v) to build / craft",
-								"(n) colloquial - something delicate",
-								""
-							]
-						}
-					}
-				},
-				"a": {
-					"θ": {
-						"values": [
-							"(n) construction site",
-							"",
-							""
-						]
-					}
-				},
-				"s": {
-					"X": {
-						"a": {
-							"values": [
-								"(n) city",
-								"(v) to settle",
-								""
-							]
-						}
-					}
-				}
-			}
-		},
-		"a": {
 			"k": {
 				"values": [
-					"(n) fantasy",
-					"(v) to hold a falsehood as true",
-					""
-				],
-				"j": {
-					"e": {
-						"values": [
-							"(n) a story",
-							"(v) to tell a story",
-							""
-						]
-					},
+					"thing(s)/stuff(s)/part(s)"
+				]
+			}
+		},
+		"a": {
+			"values": [
+				"(honorific) my noble (typically addressed to elders or superiors)"
+			],
+			"k": {
+				"s": {
 					"i": {
-						"n": {
-							"e": {
-								"values": [
-									"(n) a story teller",
-									"",
-									""
-								]
-							}
-						}
+						"values": [
+							"(n) fire",
+							"(v) to burn"
+						]
 					}
 				}
 			}
 		}
 	},
 	"s": {
+		"a": {
+			"n": {
+				"values": [
+					"my (universal, though may be rude if a more specific honorific exists)",
+					"(n) up ",
+					"(n) daytime",
+					"(n) day"
+				],
+				"i": {
+					"values": [
+						"(n) the sky",
+						"sky blue (same word as sky?)"
+					],
+					"N": {
+						"s": {
+							"i": {
+								"n": {
+									"i": {
+										"values": [
+											"(n) the world"
+										]
+									}
+								}
+							}
+						}
+					},
+					"s": {
+						"i": {
+							"z": {
+								"a": {
+									"n": {
+										"values": [
+											"weather"
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"ʃ": {
+					"e": {
+						"k": {
+							"values": [
+								"(n) the things in the sky"
+							],
+							"i": {
+								"values": [
+									"(n) cloud",
+									"(n) a deceased person's spirit (similar concept to angel)"
+								],
+								"s": {
+									"i": {
+										"n": {
+											"g": {
+												"e": {
+													"n": {
+														"values": [
+															"cloudy"
+														]
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"a": {
+						"values": [
+							"(n) dragonkind"
+						]
+					}
+				},
+				"e": {
+					"j": {
+						"a": {
+							"ʃ": {
+								"e": {
+									"k": {
+										"i": {
+											"values": [
+												"(n) rain cloud",
+												"(v) to rain"
+											]
+										}
+									}
+								}
+							},
+							"values": [
+								"(n) rain"
+							],
+							"s": {
+								"i": {
+									"n": {
+										"g": {
+											"e": {
+												"n": {
+													"values": [
+														"raining"
+													]
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"s": {
+					"values": [
+						"light (color) (daytime + s)"
+					]
+				}
+			},
+			"N": {
+				"i": {
+					"values": [
+						"(n) beyond the sky"
+					],
+					"ʃ": {
+						"e": {
+							"k": {
+								"values": [
+									"celestial body  (beyond the sky stuff)"
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"o": {
+			"θ": {
+				"ɯ": {
+					"values": [
+						"(art) from the perspective of"
+					]
+				}
+			}
+		},
 		"X": {
 			"a": {
 				"values": [
-					"(n) family",
-					"",
-					""
+					"(n) family"
 				],
 				"N": {
 					"values": [
-						"(n) inclusive we",
-						"",
-						""
+						"(n) inclusive we"
 					],
 					"a": {
 						"s": {
 							"values": [
-								"(?) our",
-								"",
-								""
+								"(?) our"
 							]
 						}
 					},
 					"g": {
 						"values": [
 							"(n) home",
-							"(v) to protect",
-							""
+							"(v) to protect"
 						]
 					}
 				},
 				"n": {
 					"k": {
 						"values": [
-							"(n) exclusive we",
-							"",
-							""
+							"(n) exclusive we"
 						],
 						"a": {
 							"s": {
 								"values": [
-									"(?) our",
-									"",
-									""
+									"(?) our"
+								]
+							}
+						}
+					},
+					"g": {
+						"e": {
+							"n": {
+								"values": [
+									"(n) homeland",
+									"(n) the name of this language"
 								]
 							}
 						}
@@ -410,15 +575,13 @@ const dictionary = {
 									"ʃ": {
 										"values": [
 											"(v) to do heavy/difficult work",
-											"(n) the large portion of a task",
-											""
+											"(n) the large portion of a task"
 										]
 									},
 									"g": {
 										"values": [
 											"(v) to do delicate/intracate work",
-											"(n) the small details of a task",
-											""
+											"(n) the small details of a task"
 										]
 									}
 								}
@@ -429,15 +592,12 @@ const dictionary = {
 				"j": {
 					"e": {
 						"values": [
-							"(n) you (plural)",
-							"",
-							""
+							"(n) you (plural)"
 						],
 						"n": {
 							"values": [
 								"(n) cooperation",
-								"(v) to cooperate",
-								""
+								"(v) to cooperate"
 							]
 						}
 					}
@@ -447,8 +607,7 @@ const dictionary = {
 						"a": {
 							"values": [
 								"(n) ancestors",
-								"(v) to precede",
-								""
+								"(v) to precede"
 							]
 						}
 					}
@@ -457,25 +616,19 @@ const dictionary = {
 					"e": {
 						"ʃ": {
 							"values": [
-								"(n) a dragon",
-								"",
-								""
+								"(n) a dragon"
 							]
 						},
 						"g": {
 							"values": [
-								"(n) a human",
-								"",
-								""
+								"(n) a human"
 							]
 						}
 					},
 					"i": {
 						"n": {
 							"values": [
-								"(n) society",
-								"",
-								""
+								"(n) society"
 							]
 						}
 					}
@@ -484,118 +637,36 @@ const dictionary = {
 			"e": {
 				"values": [
 					"(v) to have witnessed",
-					"(n) a witness",
-					""
+					"(n) a witness"
 				],
 				"j": {
 					"e": {
 						"n": {
 							"values": [
 								"(n) primary evidence/source",
-								"(v) to bear witness",
-								""
+								"(v) to bear witness"
 							]
 						}
 					},
 					"a": {
 						"values": [
 							"(v) to exist (as), similar to \"to be\"",
-							"(n) existence",
-							""
+							"(n) existence"
 						]
 					}
 				},
 				"g": {
 					"a": {
 						"values": [
-							"(v) to have experienced",
-							"",
-							""
+							"(v) to have experienced"
 						],
 						"n": {
 							"values": [
 								"(v) to experience",
-								"(n) an experience",
-								""
+								"(n) an experience"
 							]
 						}
 					}
-				}
-			}
-		},
-		"a": {
-			"n": {
-				"values": [
-					"(n) up ",
-					"(n) daytime",
-					"(n) day"
-				],
-				"i": {
-					"values": [
-						"(n) the sky",
-						"",
-						""
-					]
-				},
-				"ʃ": {
-					"e": {
-						"k": {
-							"values": [
-								"(n) the things in the sky",
-								"",
-								""
-							],
-							"i": {
-								"values": [
-									"(n) cloud",
-									"(n) a deceased person's spirit (similar concept to angel)",
-									""
-								]
-							}
-						}
-					},
-					"a": {
-						"values": [
-							"(n) dragonkind",
-							"",
-							""
-						]
-					}
-				},
-				"e": {
-					"j": {
-						"a": {
-							"values": [
-								"(n) rain",
-								"",
-								""
-							],
-							"s": {
-								"h": {
-									"e": {
-										"k": {
-											"i": {
-												"values": [
-													"(n) rain cloud",
-													"(v) to rain",
-													""
-												]
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			"N": {
-				"i": {
-					"values": [
-						"(n) beyond the sky",
-						"",
-						""
-					]
 				}
 			}
 		},
@@ -608,26 +679,29 @@ const dictionary = {
 				],
 				"i": {
 					"values": [
-						"(n) the ground",
-						"",
-						""
-					]
+						"(n) the ground"
+					],
+					"z": {
+						"ɯ": {
+							"ʃ": {
+								"values": [
+									"(b) run "
+								]
+							}
+						}
+					}
 				},
 				"ʃ": {
 					"a": {
 						"k": {
 							"values": [
-								"(n) the things on the ground",
-								"",
-								""
+								"(n) the things on the ground"
 							]
 						},
 						"ʃ": {
 							"i": {
 								"values": [
-									"(n) humankind",
-									"",
-									""
+									"(n) humankind"
 								]
 							}
 						}
@@ -635,17 +709,36 @@ const dictionary = {
 					"e": {
 						"k": {
 							"values": [
-								"(n) the things in the ground",
-								"",
-								""
+								"(n) the things in the ground"
 							],
 							"i": {
 								"values": [
-									"(n) the dead",
-									"",
-									""
+									"(n) the dead"
 								]
 							}
+						}
+					}
+				},
+				"s": {
+					"a": {
+						"n": {
+							"i": {
+								"values": [
+									"(n) ocean "
+								]
+							}
+						}
+					},
+					"values": [
+						"dark (nighttime + s)"
+					]
+				},
+				"g": {
+					"e": {
+						"n": {
+							"values": [
+								"time"
+							]
 						}
 					}
 				}
@@ -653,10 +746,38 @@ const dictionary = {
 			"N": {
 				"i": {
 					"values": [
-						"(n) below the ground",
-						"",
-						""
+						"(n) below the ground"
 					]
+				}
+			},
+			"z": {
+				"a": {
+					"n": {
+						"k": {
+							"e": {
+								"ʃ": {
+									"values": [
+										"storm "
+									]
+								}
+							}
+						},
+						"values": [
+							"(n) emotion"
+						]
+					},
+					"s": {
+						"θ": {
+							"a": {
+								"n": {
+									"values": [
+										"(n) excitement",
+										"(v) to cheer"
+									]
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -665,22 +786,17 @@ const dictionary = {
 				"n": {
 					"values": [
 						"(n) favorable wind",
-						"(v) to be helpful",
-						""
+						"(v) to be helpful"
 					]
 				},
 				"g": {
 					"values": [
-						"(n) daughter",
-						"",
-						""
+						"(n) daughter"
 					],
 					"i": {
 						"n": {
 							"values": [
-								"(n) granddaughter",
-								"",
-								""
+								"(n) granddaughter"
 							]
 						}
 					}
@@ -695,16 +811,12 @@ const dictionary = {
 					},
 					"i": {
 						"values": [
-							"(n) sister",
-							"",
-							""
+							"(n) sister"
 						]
 					},
 					"e": {
 						"values": [
-							"(n) friend",
-							"",
-							""
+							"(n) friend"
 						]
 					}
 				},
@@ -728,66 +840,316 @@ const dictionary = {
 					"i": {
 						"values": [
 							"(n) mother",
-							"(v) to protect",
-							""
+							"(v) to protect"
 						]
+					}
+				}
+			}
+		},
+		"e": {
+			"θ": {
+				"e": {
+					"values": [
+						"0"
+					]
+				},
+				"a": {
+					"values": [
+						"2"
+					]
+				}
+			},
+			"X": {
+				"e": {
+					"values": [
+						"1 (this number glyph is also the glyph for X)",
+						"X"
+					]
+				}
+			},
+			"ʃ": {
+				"e": {
+					"values": [
+						"3"
+					]
+				},
+				"i": {
+					"values": [
+						"4"
+					]
+				},
+				"a": {
+					"values": [
+						"5"
+					]
+				}
+			},
+			"s": {
+				"e": {
+					"values": [
+						"6"
+					]
+				},
+				"i": {
+					"values": [
+						"7"
+					]
+				},
+				"a": {
+					"values": [
+						"8"
+					]
+				}
+			},
+			"z": {
+				"e": {
+					"values": [
+						"9"
+					]
+				},
+				"i": {
+					"values": [
+						"10"
+					]
+				},
+				"a": {
+					"values": [
+						"11",
+						"(n) face",
+						"(n) identity",
+						"(v) to appear as"
+					],
+					"s": {
+						"θ": {
+							"a": {
+								"values": [
+									"(n) happiness",
+									"(v) to laugh"
+								]
+							}
+						}
+					},
+					"k": {
+						"e": {
+							"n": {
+								"e": {
+									"values": [
+										"(n) sadness"
+									]
+								}
+							}
+						}
 					}
 				}
 			}
 		}
 	},
+	"n": {
+		"i": {
+			"values": [
+				"(art) indicates the following noun is a direct object"
+			],
+			"N": {
+				"values": [
+					"and"
+				]
+			},
+			"h": {
+				"ɯ": {
+					"e": {
+						"values": [
+							"(v) to predict",
+							"(n) a prediction"
+						]
+					}
+				}
+			},
+			"g": {
+				"o": {
+					"s": {
+						"o": {
+							"n": {
+								"values": [
+									"(adj) young",
+									"(n) youngster"
+								]
+							}
+						}
+					}
+				},
+				"j": {
+					"i": {
+						"values": [
+							"oil"
+						]
+					}
+				}
+			}
+		},
+		"j": {
+			"e": {
+				"k": {
+					"values": [
+						"(n) construction",
+						"(v) to create"
+					],
+					"e": {
+						"ʃ": {
+							"values": [
+								"(v) to haul",
+								"(n) colloquial - something heavy"
+							]
+						},
+						"g": {
+							"values": [
+								"(v) to build / craft",
+								"(n) colloquial - something delicate"
+							]
+						}
+					}
+				},
+				"a": {
+					"θ": {
+						"values": [
+							"(n) construction site"
+						]
+					}
+				},
+				"s": {
+					"X": {
+						"a": {
+							"values": [
+								"(n) city",
+								"(v) to settle"
+							]
+						}
+					}
+				}
+			}
+		},
+		"e": {
+			"g": {
+				"i": {
+					"values": [
+						"(n) in",
+						"(v) get in"
+					]
+				}
+			}
+		},
+		"a": {
+			"k": {
+				"values": [
+					"(n) fantasy",
+					"(v) to hold a falsehood as true"
+				],
+				"j": {
+					"e": {
+						"values": [
+							"(n) a story",
+							"(v) to tell a story"
+						]
+					},
+					"i": {
+						"n": {
+							"e": {
+								"values": [
+									"(n) a story teller"
+								]
+							}
+						}
+					}
+				}
+			},
+			"g": {
+				"i": {
+					"values": [
+						"less"
+					]
+				},
+				"z": {
+					"ɯ": {
+						"ʃ": {
+							"values": [
+								"(n) one's stable direction in life",
+								"(v) to be sure of onself"
+							]
+						}
+					}
+				}
+			},
+			"n": {
+				"values": [
+					"(n) hand"
+				],
+				"k": {
+					"e": {
+						"g": {
+							"values": [
+								"(n) fingers"
+							]
+						}
+					}
+				}
+			}
+		}
+	},
+	"-": {
+		"N": {
+			"values": [
+				"emphasis/exaggerate (when word normally ends in -n)"
+			]
+		}
+	},
 	"g": {
 		"ɯ": {
 			"n": {
-				"values": [
-					"(n) west",
-					"(n) evening",
-					"(v) to go west"
-				],
 				"e": {
 					"values": [
 						"(n) an individual",
-						"(v) to be alone",
-						""
+						"(v) to be alone"
 					],
 					"s": {
 						"values": [
-							"(n) I",
-							"",
-							""
+							"(n) I"
 						]
 					},
 					"ʃ": {
 						"i": {
 							"values": [
 								"(v) to rebel",
-								"(n) a rebel",
-								""
+								"(n) a rebel"
 							]
 						}
 					}
 				},
 				"i": {
-					"values": [
-						"(n) the west",
-						"",
-						""
-					],
 					"s": {
 						"values": [
-							"(n) you",
-							"",
-							""
+							"(n) you"
 						]
-					}
+					},
+					"θ": {
+						"e": {
+							"values": [
+								"(?) good bye"
+							]
+						}
+					},
+					"values": [
+						"(n) the west"
+					]
 				},
+				"values": [
+					"(n) west",
+					"(n) evening",
+					"(v) to go west"
+				],
 				"ʃ": {
 					"e": {
 						"k": {
 							"values": [
-								"(n) the things in the west",
-								"",
-								""
+								"(n) the things in the west"
 							]
 						}
 					}
@@ -795,15 +1157,44 @@ const dictionary = {
 			},
 			"N": {
 				"values": [
-					"(n) tomorrow",
-					"",
-					""
+					"(n) tomorrow"
 				],
 				"i": {
 					"values": [
-						"(n) the far west",
-						"",
-						""
+						"(n) the far west"
+					]
+				}
+			}
+		},
+		"e": {
+			"n": {
+				"s": {
+					"i": {
+						"values": [
+							"(n) gender neutral pronoun referring to the first person mentioned"
+						]
+					}
+				},
+				"e": {
+					"s": {
+						"e": {
+							"values": [
+								"(n) gender neutral pronoun referring to the second person mentioned"
+							]
+						}
+					}
+				}
+			},
+			"s": {
+				"values": [
+					"(n) out",
+					"(v) get out"
+				]
+			},
+			"g": {
+				"i": {
+					"values": [
+						"more"
 					]
 				}
 			}
@@ -812,23 +1203,18 @@ const dictionary = {
 			"n": {
 				"values": [
 					"(n) north",
-					"(v) to go north",
-					""
+					"(v) to go north"
 				],
 				"i": {
 					"values": [
-						"(n) the north",
-						"",
-						""
+						"(n) the north"
 					]
 				},
 				"ʃ": {
 					"e": {
 						"k": {
 							"values": [
-								"(n) the things in the north",
-								"",
-								""
+								"(n) the things in the north"
 							]
 						}
 					}
@@ -837,10 +1223,58 @@ const dictionary = {
 			"N": {
 				"i": {
 					"values": [
-						"(n) the far north",
-						"",
-						""
+						"(n) the far north"
 					]
+				}
+			},
+			"g": {
+				"k": {
+					"e": {
+						"k": {
+							"i": {
+								"values": [
+									"(n) fish ",
+									"(v) to swim"
+								]
+							}
+						}
+					}
+				},
+				"values": [
+					"(n) water",
+					"(v) to flow freely"
+				],
+				"s": {
+					"i": {
+						"n": {
+							"i": {
+								"values": [
+									"(n) underground water",
+									"(n) metaphorically underground activity",
+									"(v) to do underground work (like organizing a revolution)"
+								]
+							}
+						}
+					}
+				},
+				"z": {
+					"ɯ": {
+						"ʃ": {
+							"values": [
+								"(n) river",
+								"(n) one's direction in life (unstable)"
+							]
+						}
+					}
+				},
+				"e": {
+					"g": {
+						"i": {
+							"values": [
+								"(n) lake"
+							]
+						}
+					}
 				}
 			}
 		},
@@ -848,23 +1282,18 @@ const dictionary = {
 			"n": {
 				"values": [
 					"(n) south",
-					"(v) to go south",
-					""
+					"(v) to go south"
 				],
 				"i": {
 					"values": [
-						"(n) the south",
-						"",
-						""
+						"(n) the south"
 					]
 				},
 				"ʃ": {
 					"e": {
 						"k": {
 							"values": [
-								"(n) the things in the south",
-								"",
-								""
+								"(n) the things in the south"
 							]
 						}
 					}
@@ -873,9 +1302,7 @@ const dictionary = {
 			"N": {
 				"i": {
 					"values": [
-						"(n) the far south",
-						"",
-						""
+						"(n) the far south"
 					]
 				}
 			}
@@ -888,19 +1315,22 @@ const dictionary = {
 					"(v) to go east"
 				],
 				"i": {
+					"θ": {
+						"e": {
+							"values": [
+								"(?) hello"
+							]
+						}
+					},
 					"values": [
-						"(n) the east",
-						"",
-						""
+						"(n) the east"
 					]
 				},
 				"ʃ": {
 					"e": {
 						"k": {
 							"values": [
-								"(n) the things in the east",
-								"",
-								""
+								"(n) the things in the east"
 							]
 						}
 					}
@@ -908,15 +1338,11 @@ const dictionary = {
 			},
 			"N": {
 				"values": [
-					"(n) yesterday",
-					"",
-					""
+					"(n) yesterday"
 				],
 				"i": {
 					"values": [
-						"(n) the far east",
-						"",
-						""
+						"(n) the far east"
 					]
 				}
 			},
@@ -925,15 +1351,12 @@ const dictionary = {
 					"n": {
 						"values": [
 							"(n) egg",
-							"(v) to have no idea what’s goin g on",
-							""
+							"(v) to have no idea what’s goin g on"
 						],
 						"i": {
 							"s": {
 								"values": [
-									"(n) insult (a cluless idiot)",
-									"",
-									""
+									"(n) a dumb egg (insult)"
 								]
 							}
 						},
@@ -942,9 +1365,7 @@ const dictionary = {
 								"k": {
 									"e": {
 										"values": [
-											"(n) monster (egg mooch/theif)",
-											"",
-											""
+											"(n) monster (egg mooch/theif)"
 										]
 									}
 								}
@@ -959,23 +1380,17 @@ const dictionary = {
 		"e": {
 			"n": {
 				"values": [
-					"(n) neutral winds",
-					"",
-					""
+					"(n) neutral winds"
 				],
 				"ʃ": {
 					"e": {
 						"values": [
-							"(n) son",
-							"",
-							""
+							"(n) son"
 						],
 						"n": {
 							"i": {
 								"values": [
-									"(n) grandson",
-									"",
-									""
+									"(n) grandson"
 								]
 							}
 						}
@@ -985,16 +1400,13 @@ const dictionary = {
 					"e": {
 						"values": [
 							"(n) updraft",
-							"(v) to support (not actively) / provide foundation",
-							""
+							"(v) to support (not actively) / provide foundation"
 						]
 					}
 				},
 				"i": {
 					"values": [
-						"(n) father",
-						"",
-						""
+						"(n) father"
 					]
 				},
 				"k": {
@@ -1009,16 +1421,12 @@ const dictionary = {
 				"j": {
 					"i": {
 						"values": [
-							"(n) weak updraft",
-							"",
-							""
+							"(n) weak updraft"
 						],
 						"ʃ": {
 							"e": {
 								"values": [
-									"(n) brother",
-									"",
-									""
+									"(n) brother"
 								]
 							}
 						}
@@ -1030,16 +1438,45 @@ const dictionary = {
 			"e": {
 				"values": [
 					"(n) duty",
-					"(v) to have the duty to",
-					""
+					"(v) to have the duty to"
 				],
 				"ʃ": {
 					"values": [
 						"(n) honor",
-						"(v) to follow suit (of an honorable person or action)",
-						""
+						"(v) to follow suit (of an honorable person or action)"
 					]
+				},
+				"θ": {
+					"a": {
+						"values": [
+							"(n) love",
+							"(v) to love (to feel a duty towards)"
+						],
+						"n": {
+							"values": [
+								"heart (zjetha - love)"
+							]
+						}
+					}
+				},
+				"X": {
+					"a": {
+						"n": {
+							"values": [
+								"(n) dog",
+								"(n) loyalty"
+							]
+						}
+					}
 				}
+			}
+		},
+		"ɯ": {
+			"ʃ": {
+				"values": [
+					"(v) to fly",
+					"(n) time spent flying"
+				]
 			}
 		}
 	},
@@ -1048,17 +1485,161 @@ const dictionary = {
 			"e": {
 				"values": [
 					"(v) to infer",
-					"(n) an inference",
-					""
+					"(n) an inference"
 				],
 				"j": {
 					"a": {
 						"values": [
-							"(?) therefore",
-							"",
-							""
+							"(?) therefore"
 						]
 					}
+				}
+			}
+		},
+		"o": {
+			"N": {
+				"ʃ": {
+					"a": {
+						"k": {
+							"s": {
+								"i": {
+									"values": [
+										"(n) lighting",
+										"(v) to strike suddenly "
+									]
+								}
+							}
+						}
+					}
+				},
+				"values": [
+					"(n) thunder",
+					"(n) power",
+					"(v) to hold power"
+				],
+				"s": {
+					"i": {
+						"z": {
+							"a": {
+								"n": {
+									"k": {
+										"e": {
+											"ʃ": {
+												"values": [
+													"thunder storm"
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"i": {
+			"s": {
+				"values": [
+					"(n) hot"
+				]
+			}
+		}
+	},
+	"X": {
+		"e": {
+			"n": {
+				"θ": {
+					"values": [
+						"12"
+					]
+				},
+				"i": {
+					"θ": {
+						"a": {
+							"values": [
+								"144"
+							]
+						}
+					}
+				}
+			}
+		},
+		"a": {
+			"h": {
+				"values": [
+					"(n) coldness"
+				],
+				"e": {
+					"N": {
+						"values": [
+							"(n) extreme coldness (freezing) "
+						]
+					}
+				}
+			}
+		}
+	},
+	"χ": {
+		"a": {
+			"h": {
+				"a": {
+					"n": {
+						"values": [
+							"(n) dog"
+						]
+					}
+				}
+			}
+		}
+	},
+	"θ": {
+		"a": {
+			"s": {
+				"k": {
+					"s": {
+						"i": {
+							"n": {
+								"g": {
+									"e": {
+										"n": {
+											"values": [
+												"sunny "
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					" ": {
+						"n": {
+							"i": {
+								"N": {
+									" ": {
+										"s": {
+											"a": {
+												"n": {
+													"e": {
+														"j": {
+															"a": {
+																"values": [
+																	"sun shower"
+																]
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"values": [
+						"sun"
+					]
 				}
 			}
 		}

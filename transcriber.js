@@ -3,6 +3,23 @@ const output = document.getElementById('transcribed text');
 
 userInput.oninput = function() {
 	var inputString = userInput.value + "";
+	
+	inputString = formatSangen(inputString);
+	
+	//inputString = inputString.replace("_0", "__");
+	/*
+	inputString = inputString.replace("_", "q");
+	inputString = inputString.replace("0", "_");
+	inputString = inputString.replace("q", "0");
+	*/
+	console.log(inputString);
+
+	//inputString.replace("sX", "x"); // potential future glyph 
+
+	output.innerText = inputString;
+};
+
+function formatSangen(inputString) {
 	inputString = inputString.replace(/sh/g, "ʃ");
 	inputString = inputString.replace(/th/g, "θ");
 	inputString = inputString.replace(/uu/g, "ɯ");
@@ -23,15 +40,5 @@ userInput.oninput = function() {
 	inputString = inputString.replace(/00/g, "0_");
 	inputString = inputString.replace(/_0/g, "__");
 	
-	//inputString = inputString.replace("_0", "__");
-	/*
-	inputString = inputString.replace("_", "q");
-	inputString = inputString.replace("0", "_");
-	inputString = inputString.replace("q", "0");
-	*/
-	console.log(inputString);
-
-	//inputString.replace("sX", "x"); // potential future glyph 
-
-	output.innerText = inputString;
-};
+	return inputString;
+}
