@@ -10,6 +10,10 @@ function translateFromSangen(conlangText, toEnglishDictionary, translatedTextEle
 	conlangText = formatSangen(conlangText);
 	var words = conlangText.replace(/\./g, "").replace(/,/g, "").split(" ").filter(word => word.length > 0); // split into array of words, remove empty strings
 	
+	
+	translatedTextElement.appendChild(makeSpaceElement());
+	
+	
 	var translation = "";
 	for(var i = 0; i < words.length; i++) {
 		word = words[i];
@@ -37,7 +41,8 @@ function translateFromSangen(conlangText, toEnglishDictionary, translatedTextEle
 				
 				// prefixes only have one meaning: the tense of the attatched verb
 				var prefixElement = document.createElement("SPAN");
-				prefixElement.innerText = "" + prefix[0] + "->";
+				prefixElement.innerText = " " + prefix[0] + "->";
+				prefixElement.className = "translated-word-prefix";
 				translatedTextElement.appendChild(prefixElement);
 		
 				// update the actual meaning of the word to the meaning of the root verb
@@ -49,28 +54,37 @@ function translateFromSangen(conlangText, toEnglishDictionary, translatedTextEle
 		
 		if(translatedWord.length == 1) {
 			var wordElement = document.createElement("SPAN");
-			wordElement.className = "translated word single";
-			wordElement.innerText = translatedWord[0].replace(/\(.\) /, "");
+			wordElement.className = "translated-word-single";
+			wordElement.innerText = " " + translatedWord[0].replace(/\(.\) /, "") + " ";
 			translatedTextElement.appendChild(wordElement);
 		} else {
+			var dropdownParent = document.createElement("SPAN");
+			dropdownParent.className = "translated-word-dropdown-parent";
+			
 			var dropdown = document.createElement("SELECT");
-			dropdown.className = "translated word dropdown";
+			dropdown.className = "translated-word-dropdown";
+			dropdown.options.add(new Option(""));
+			dropdownParent.appendChild(dropdown);
 			
 			for(var j = 0; j < translatedWord.length; j++) {
 				dropdown.options.add(new Option(translatedWord[j]));//.replace(/\(.\) /, "")));
 			}
 			
-			translatedTextElement.appendChild(dropdown);
+			translatedTextElement.appendChild(dropdownParent);
 		}
 		
-		var spaceElement = document.createElement("SPAN");
-		spaceElement.className = "translated word space";
-		spaceElement.innerText = " ";
-		translatedTextElement.appendChild(spaceElement);
+		translatedTextElement.appendChild(makeSpaceElement());
 	}
 	
 	//translatedTextElement.innerText = translation;
 	//return translation;
+}
+
+function makeSpaceElement() {
+	var spaceElement = document.createElement("SPAN");
+	spaceElement.className = "translated-word-space";
+	spaceElement.innerText = "----";
+	return spaceElement;
 }
 
 function trieGet(trie, key) {

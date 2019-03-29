@@ -9,6 +9,8 @@
 		
 		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
 		<link rel="stylesheet" href="font_blocky/style.css">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		
 		<title>Simple Translator</title>
 	</head>
 	<body>
@@ -20,28 +22,36 @@
 		</p>
 		<p>
 			Your input:
-			<textarea id="conlang input" name="user input"> gɯnis oasXeja gosonis. </textarea>
+			<textarea id="conlang input" name="user input" class="conlang-input"> gɯnis oasXeja gosonis. </textarea>
 		</p>
 		<p>
 			<button id="translate input">Translate</button>
 		</p>
 		<p>
 			<p class="label">
-				Transcription of your input: 
+				<h3>Transcription of your input: </h3>
 			</p>
-			<p class="output">
-				<font face='dragonConlang_blocky' size=20 id="transcribed text">gɯnis oasXeja gosonis .</font>
-			</p>
+			<div class="output output-outer">
+				<div class="output output-inner">
+					<div class="output output-inner-padding">
+						<font face='dragonConlang_blocky' size=20 id="transcribed text">gɯnis oasXeja gosonis .</font>
+					</div>
+				</div>
+			</div>
 		</p>
 		<p>
 			<p class="label">
-				Translation of your input: 
+				<h3>Translation of your input</h3>
 			</p>
-			<p class="output">
-				<b  id="translated text">
+			<div class="output output-outer">
+				<div class="output output-inner translated-text-parent">
+					<div class="output output-inner-padding translated-text-parent">
+						<span id="translated text" class="translated-text-parent">
 					
-				</b>
-			</p>
+						</span>
+					</div>
+				</div>
+			</div>
 		</p>
 	</body>
 	<script src="dictionary_toEnglish.js"></script>

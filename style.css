@@ -1,0 +1,49 @@
+.translated-word-single, .translated-word-prefix, .translated-word-dropdown, .translated-word-space {
+	background: LightGray;
+}
+
+.translated-word-single, .translated-word-prefix {
+	border: 1px solid black;
+}
+
+.translated-word-space {
+	color: LightGray;
+}
+
+.translated-word-dropdown {
+	border: 2px solid red;
+}
+
+.translated-word-dropdown-parent {
+	font-style:bold;
+	
+	position:relative;
+    top:-1px;
+}
+
+.translated-text-parent {
+	background: LightGray;
+}
+
+.output-outer {
+	border: 3px solid black;
+	background: DarkGray;
+}
+.output-inner {
+	border: 3px solid black;
+	background: white;
+	margin:3px;
+}
+.output-inner-padding {
+	margin:3px;
+}
+
+.conlang-input:hover {
+	font-family:arial;
+	font-size:20px;
+}
+
+.conlang-input {
+	font-family:dragonConlang_blocky;
+	font-size:20px;
+}
