@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'dragonConlang_blocky';
-  src:  url('fonts/dragonConlang_blocky.eot?k2t6e0');
-  src:  url('fonts/dragonConlang_blocky.eot?k2t6e0#iefix') format('embedded-opentype'),
-    url('fonts/dragonConlang_blocky.ttf?k2t6e0') format('truetype'),
-    url('fonts/dragonConlang_blocky.woff?k2t6e0') format('woff'),
-    url('fonts/dragonConlang_blocky.svg?k2t6e0#dragonConlang_blocky') format('svg');
+  src:  url('fonts/dragonConlang_blocky.eot?dz7z4v');
+  src:  url('fonts/dragonConlang_blocky.eot?dz7z4v#iefix') format('embedded-opentype'),
+    url('fonts/dragonConlang_blocky.ttf?dz7z4v') format('truetype'),
+    url('fonts/dragonConlang_blocky.woff?dz7z4v') format('woff'),
+    url('fonts/dragonConlang_blocky.svg?dz7z4v#dragonConlang_blocky') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-u:before {
+  content: "\259";
+}
+.icon-U:before {
+  content: "\26f";
+}
 .icon-o:before {
   content: "\6f";
 }
@@ -99,14 +105,11 @@
 .icon-s:before {
   content: "\73";
 }
-.icon-sh:before {
+.icon-S:before {
   content: "\283";
 }
-.icon-th:before {
+.icon-T:before {
   content: "\3b8";
-}
-.icon-uu:before {
-  content: "\26f";
 }
 .icon-vowel_holder:before {
   content: "\5f";

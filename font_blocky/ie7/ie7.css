@@ -1,3 +1,9 @@
+.icon-u {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x259;');
+}
+.icon-U {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x26f;');
+}
 .icon-o {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x6f;');
 }
@@ -73,14 +79,11 @@
 .icon-s {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x73;');
 }
-.icon-sh {
+.icon-S {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x283;');
 }
-.icon-th {
+.icon-T {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x3b8;');
-}
-.icon-uu {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x26f;');
 }
 .icon-vowel_holder {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x5f;');

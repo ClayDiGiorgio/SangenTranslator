@@ -13,6 +13,8 @@
 		el.innerHTML = '<span style="font-family: \'dragonConlang_blocky\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'icon-u': '&#x259;',
+		'icon-U': '&#x26f;',
 		'icon-o': '&#x6f;',
 		'icon-0': '&#x30;',
 		'icon-1': '&#x31;',
@@ -38,9 +40,8 @@
 		'icon-N': '&#x4e;',
 		'icon-period': '&#x2e;',
 		'icon-s': '&#x73;',
-		'icon-sh': '&#x283;',
-		'icon-th': '&#x3b8;',
-		'icon-uu': '&#x26f;',
+		'icon-S': '&#x283;',
+		'icon-T': '&#x3b8;',
 		'icon-vowel_holder': '&#x5f;',
 		'icon-X': '&#x58;',
 		'icon-z': '&#x7a;',

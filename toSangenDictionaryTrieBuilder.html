@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<html lang="en-US">
+	
+		<meta charset="utf-8">
+		<meta name="author" content="Clay">
+		<meta name="description" content="Compiles a trie that allows for translation from English to Sangen.">
+		
+		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+		<link rel="stylesheet" href="font_blocky/style.css">
+		<title>Dictionary Trie Builder</title>
+	</head>
+	<body>
+		<p>
+			<h1>Trie Builder</h1>
+		</p>
+		<p>
+			Please copy/paste the word and definition columns of the conlang's dictionary spreadsheet
+		</p>
+		<p>
+			<textarea id="input" name="user input"></textarea>
+		</p>
+		<p>
+			<button id="process input">Process Input</button>
+		</p>
+		<p>
+			<p>
+				JSON encoding of the resultant trie:
+			</p>
+			<textarea id="output" readonly>
+				
+			</textarea>
+		</p>
+	</body>
+	<script>
+		const userInput = document.getElementById('input');
+		const output = document.getElementById('output');
+		const button = document.getElementById('process input');
+
+		button.addEventListener('click', function (event) {
+			var userInputText = userInput.value;
+			var entries = userInputText.split("\n"); // spreadsheet rows
+			
+			var trie = {}; // initialize a trie root node
+			
+			for(var i = 0; i < entries.length; i++) {
+				var entry = entries[i].split("\t"); // array of entries in a row
+				var sangenWord = entry.shift(); // the sangen word
+				
+				if(sangenWord == "" || sangenWord == undefined) {
+					continue;
+				}	
+				
+				var interpretations = [];
+				for(var j = 0; j < entries.length; j++) {
+					// get potential translation, checking to make sure it's not empty
+					var englishTranslation = entry.shift();
+					if(englishTranslation == "" || englishTranslation == undefined) {
+						continue;
+					}
+					
+					// remove the parentheticals
+					englishTranslation = englishTranslation.replace(/ ?\(.+\) ?/g, ""); 
+					
+					// if there are no /'s in the entry, we're good, there's only one interperetation of it
+					if(englishTranslation.indexOf('/') < 0 && englishTranslation.indexOf('\\') < 0) {
+						interpretations.push(englishTranslation);
+					} else {
+						interpretations = interpretations.concat(splitSlashes(englishTranslation));
+					}
+				}
+				
+				// insert the Sangen word at each of the translation interperetations
+				for(var k = 0; k < interpretations.length; k++) {
+					trieInsert(trie, interpretations[k], [sangenWord]);
+				}
+			}
+			console.log(trie);
+			output.innerText = JSON.stringify(trie, null, '\t');
+		});
+		
+		function splitSlashes(english) {
+			var hasFore = english.indexOf('/') >= 0;
+			var hasBack = english.indexOf('\\') >= 0;
+			
+			if(hasFore) {
+				var eng1 = english.replace(/\w+ ?\//, "");
+				var eng2 = english.replace(/\/ ?\w+/, "");
+				
+				console.log(eng1 + " - " + eng2);
+				
+				return splitSlashes(eng1).concat(splitSlashes(eng2));
+			} else if(hasBack) {
+				var eng1 = english.replace(/\w+ ?\\/, "");
+				var eng2 = english.replace(/\\ ?\w+/, "");
+				
+				return splitSlashes(eng1).concat(splitSlashes(eng2));
+			}
+			
+			return [english];
+		}
+		
+		function trieInsert(trie, key, dataArray) {
+			for(var i = 0; i < key.length; i++) {
+				if(trie[key.charAt(i)] == undefined) {
+					trie[key.charAt(i)] = {};
+				}
+				trie = trie[key.charAt(i)];
+			}
+			
+			if(trie.values == undefined) {
+				trie.values = [];
+			}
+			
+			trie.values = trie.values.concat(dataArray.filter(word => word.length > 0));
+		}
+	</script>
+	
+	<script class="debug">
+		console.log(splitSlashes("hi/hello"));
+		console.log(splitSlashes("hi this/that is a test/trial I guess"));
+	</script>
+</html>
+
+

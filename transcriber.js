@@ -14,9 +14,10 @@ userInput.oninput = function() {
 }; 
 
 function formatSangen(inputString) {
-	inputString = inputString.replace(/sh/g, "ʃ");
-	inputString = inputString.replace(/th/g, "θ");
-	inputString = inputString.replace(/uu/g, "ɯ");
+	inputString = inputString.replace(/S/g, "ʃ");
+	inputString = inputString.replace(/T/g, "θ");
+	inputString = inputString.replace(/U/g, "ɯ");
+	inputString = inputString.replace(/u/g, "ə");
 
 	inputString = inputString.replace(/χ/g, "X"); // one of two IPA -> latin
 	inputString = inputString.replace(/ʝ/g, "j");
