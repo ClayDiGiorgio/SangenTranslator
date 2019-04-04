@@ -1,3 +1,13 @@
+
+.horizontal-spacer{
+	width:100%;
+}
+
+
+/*
+   LinkBar
+*/
+
 .link-bar {
 	background:lightGreen;
 	padding:12px;
@@ -17,8 +27,36 @@
 	background-image: linear-gradient(darkGreen, green);
 }
 
+/*
+   End LinkBar
+*/
 
-.horizontal-spacer{
-	width:100%;
+
+h1 {
+	background:linear-gradient(to left, lightGreen, green, lightGreen);
+	color:white;
+	padding:10px;
+	text-align: center;
+}
+
+.header-wrapper {
+	background:lightGreen;
+	padding:12px;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.content-wrapper {
+	background:linear-gradient(lightGreen, white);
+    height: 100%;
 }
 
