@@ -57,20 +57,37 @@
 	<script src="dictionary_toEnglish.js"></script>
 	<script src="translationScript.js"></script>
 	<script src="transcriber.js"></script>
+	<script>
+		const userInput = document.getElementById('conlang input');
+		const output = document.getElementById('transcribed text');
+
+		userInput.oninput = function() {
+			var inputString = userInput.value + "";
+	
+			inputString = formatSangen(inputString);
+	
+			console.log(inputString);
+
+			//inputString.replace("sX", "x"); // potential future glyph 
+
+			output.innerText = inputString;
+		}; 
+	</script>
 	<script name="translator">
-		const translation = document.getElementById('translated text');
+		const translationText = document.getElementById('translated text');
 		const button = document.getElementById('translate input');
-		translateFromSangen(userInput.value, dictionary, translation);
+		translateFromSangen(userInput.value, dictionary, translationText);
 
 		button.addEventListener('click', function (event) {
 			// clear the previous translation
-			var total = translation.children.length
+			var total = translationText.children.length
 			for(var i = 0; i < total; i++) {
-				translation.children[0].remove();
+				translationText.children[0].remove();
 			}
 			
 			// create the new translation
-			translateFromSangen(userInput.value, dictionary, translation);
+			var translation = translateFromSangen(userInput.value, dictionary, translation);
+			translationToHTML(translation, translationText);
 		});
 	</script>
 </html>

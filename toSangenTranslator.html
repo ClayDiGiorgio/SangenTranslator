@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<html lang="en-US">
+	
+		<meta charset="utf-8">
+		<meta name="author" content="Clay">
+		<meta name="description" content="Translates English roughly into Sangen.">
+		
+		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+		<link rel="stylesheet" href="font_blocky/style.css">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		
+		<title>Simple Translator</title>
+	</head>
+	<body>
+		<p>
+			<h1>From English to Sangen Translator</h1>
+		</p>
+		<p>
+			Please write in English, then click the translate button!
+		</p>
+		<p>
+			Your input:
+			<textarea id="english input" name="user input" class="english-input">You to be a dumb egg.</textarea>
+		</p>
+		<p>
+			<button id="translate input">Translate</button>
+		</p>
+		<p>
+			<p class="label">
+				<h3>Translation of your input</h3>
+			</p>
+			<div class="output output-outer">
+				<div class="output output-inner translated-text-parent">
+					<div class="output output-inner-padding translated-text-parent">
+						<span id="translated text" class="translated-text-parent">
+							gənis oasXeja gosonis.
+						</span>
+					</div>
+				</div>
+			</div>
+		</p>
+		<p>
+			<p class="label">
+				<h3>Transcription of the translation: </h3>
+			</p>
+			<div class="output output-outer">
+				<div class="output output-inner">
+					<div class="output output-inner-padding">
+						<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis .</font>
+					</div>
+				</div>
+			</div>
+		</p>
+	</body>
+	<script src="dictionary_toSangen.js"></script>
+	<script src="translationScript.js"></script>
+	<script src="transcriber.js"></script>
+	<script name="translator">
+		const userInput       = document.getElementById('english input');
+		const translationText = document.getElementById('translated text');
+		const button          = document.getElementById('translate input');
+		const transcription   = document.getElementById('transcribed text');
+		
+		var translation = translateToSangen(userInput.value, dictionary, translation);
+		translationToHTML(translation, translationText);
+		
+		button.addEventListener('click', function (event) {
+			// clear the previous translation
+			let total = translationText.children.length
+			for(var i = 0; i < total; i++) {
+				translationText.children[0].remove();
+			}
+			
+			// create the new translation
+			var translation = translateToSangen(userInput.value, dictionary, translation);
+			translationToHTML(translation, translationText);
+			
+			
+			var transStr = "";
+			translation.forEach(function(word) {
+				if(word == undefined) return;
+				word = word[0];
+				
+				if(word.startsWith("noletter")) {
+					if(transStr.charAt(transStr.length-1) != '-')
+						transStr += " ";
+					transStr += "-"
+					return;
+				}
+				
+				transStr += " " + word;
+			});
+			transStr = formatSangen(transStr);
+			transcription.innerText = transStr;
+		});
+	</script>
+</html>
+
+

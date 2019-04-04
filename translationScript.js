@@ -8,13 +8,14 @@ function translateFromSangen(conlangText, toEnglishDictionary, translatedTextEle
 	
 	// change latin into regular ipa 
 	conlangText = formatSangen(conlangText);
-	var words = conlangText.replace(/\./g, "").replace(/,/g, "").split(" ").filter(word => word.length > 0); // split into array of words, remove empty strings
+	let words = conlangText.replace(/\./g, "").replace(/,/g, "").split(" ").filter(word => word.length > 0); // split into array of words, remove empty strings
 	
 	
-	translatedTextElement.appendChild(makeSpaceElement());
+	//translatedTextElement.appendChild(makeSpaceElement());
+	let translation = [];
 	
 	
-	var translation = "";
+	//var translation = "";
 	for(var i = 0; i < words.length; i++) {
 		word = words[i];
 	
@@ -40,18 +41,54 @@ function translateFromSangen(conlangText, toEnglishDictionary, translatedTextEle
 				//translatedWord = prefix+ ": " + word;	
 				
 				// prefixes only have one meaning: the tense of the attatched verb
-				var prefixElement = document.createElement("SPAN");
-				prefixElement.innerText = " " + prefix[0] + "->";
-				prefixElement.className = "translated-word-prefix";
-				translatedTextElement.appendChild(prefixElement);
-		
+				translation.push(prefix);
+				
 				// update the actual meaning of the word to the meaning of the root verb
-				translatedWord = word;//.map(function (e){e = e.replace(/\(.\) /, "")});
+				translatedWord = word;
 			}
 		}
 		
-		//translation = translation + "[" + translatedWord + "] ";
+		translation.push(translatedWord);
 		
+	}
+	
+	console.log(translation);
+	return translation;
+}
+
+function translateToSangen(englishText, toSangenDictionary, translatedTextElement) {
+	let translation = [];
+	englishText = englishText.toLowerCase().replace(/\./g, "").replace(/,/g, ""); // sanitize
+	console.log("---------------\n"+englishText);
+	
+	while(englishText != "") {
+		if(englishText.charAt(0) == " ") {
+			englishText = englishText.substring(1);
+			continue;
+		}
+	
+		let retrieval = trieGetLongestPrefix(toSangenDictionary, englishText);
+		englishText = retrieval.remaining;
+		translation.push(retrieval.data);
+		
+		console.log(englishText);
+	}
+	
+	console.log(translation);
+	
+	return translation;
+}
+
+/**
+ * takes a translation array and makes a UI representation of it in HTML
+ *
+ */
+function translationToHTML(translation, translatedTextElement) {
+	translatedTextElement.appendChild(makeSpaceElement());
+	
+	translation.forEach(function(translatedWord) {
+		if(translatedWord == undefined) return;
+	
 		if(translatedWord.length == 1) {
 			var wordElement = document.createElement("SPAN");
 			wordElement.className = "translated-word-single";
@@ -74,21 +111,18 @@ function translateFromSangen(conlangText, toEnglishDictionary, translatedTextEle
 		}
 		
 		translatedTextElement.appendChild(makeSpaceElement());
-	}
-	
-	//translatedTextElement.innerText = translation;
-	//return translation;
+	});
 }
 
 function makeSpaceElement() {
-	var spaceElement = document.createElement("SPAN");
+	let spaceElement = document.createElement("SPAN");
 	spaceElement.className = "translated-word-space";
 	spaceElement.innerText = "----";
 	return spaceElement;
 }
 
 function trieGet(trie, key) {
-	for(var i = 0; i < key.length; i++) {
+	for(let i = 0; i < key.length; i++) {
 		if(trie == undefined)
 			break;
 		trie = trie[key.charAt(i)];
@@ -100,6 +134,47 @@ function trieGet(trie, key) {
 		return ["nodefinition_"+key];
 	
 	return trie.values;
+}
+
+// returns the data associated with longest prefix of key that is an entry in the trie,
+// along with the rest of the key
+function trieGetLongestPrefix(trie, key) {
+	console.log("searching for *" + key + "* length: " + key.length);
+	let lastDataNode = trie;
+	let lastDataI = -1;
+	
+	for(var i = 0; i < key.length; i++) {
+		if(trie[key.charAt(i)] == undefined) // just keep going until you can't
+			break;
+		
+		trie = trie[key.charAt(i)];
+		if(trie.values != undefined) {
+			lastDataNode = trie;
+			lastDataI = i+1;
+		}
+		
+		console.log("\tfound letter " + i + ": " + key.charAt(i));
+	}
+	
+	let data = [];
+	if(trie == undefined)
+		data = ["noentry_"+key];
+	if(trie.values == undefined)
+		data = ["nodefinition_"+key];
+	
+	data = lastDataNode.values;
+	
+	// if the first letter isn't even in the trie at all
+	if(lastDataI == -1) {
+		data = ["noletter_"+key.charAt(0)];
+		lastDataI = 1;
+	}
+	
+	console.log("\tdata: " + data);
+	
+	let remain = key.substring(lastDataI);
+	console.log("\tremain: *" + remain);
+	return {"data":data, "remaining":remain };
 }
 
 /*

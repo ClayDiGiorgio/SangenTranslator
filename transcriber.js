@@ -1,18 +1,3 @@
-const userInput = document.getElementById('conlang input');
-const output = document.getElementById('transcribed text');
-
-userInput.oninput = function() {
-	var inputString = userInput.value + "";
-	
-	inputString = formatSangen(inputString);
-	
-	console.log(inputString);
-
-	//inputString.replace("sX", "x"); // potential future glyph 
-
-	output.innerText = inputString;
-}; 
-
 function formatSangen(inputString) {
 	inputString = inputString.replace(/S/g, "ʃ");
 	inputString = inputString.replace(/T/g, "θ");
