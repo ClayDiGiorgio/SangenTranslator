@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'dragonConlang_blocky';
-  src:  url('fonts/dragonConlang_blocky.eot?dz7z4v');
-  src:  url('fonts/dragonConlang_blocky.eot?dz7z4v#iefix') format('embedded-opentype'),
-    url('fonts/dragonConlang_blocky.ttf?dz7z4v') format('truetype'),
-    url('fonts/dragonConlang_blocky.woff?dz7z4v') format('woff'),
-    url('fonts/dragonConlang_blocky.svg?dz7z4v#dragonConlang_blocky') format('svg');
+  src:  url('fonts/dragonConlang_blocky.eot?j5m8qb');
+  src:  url('fonts/dragonConlang_blocky.eot?j5m8qb#iefix') format('embedded-opentype'),
+    url('fonts/dragonConlang_blocky.ttf?j5m8qb') format('truetype'),
+    url('fonts/dragonConlang_blocky.woff?j5m8qb') format('woff'),
+    url('fonts/dragonConlang_blocky.svg?j5m8qb#dragonConlang_blocky') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-nameSignifier_begining:before {
+  content: "\3c";
+}
+.icon-nameSignifier_end:before {
+  content: "\3e";
+}
 .icon-u:before {
   content: "\259";
 }

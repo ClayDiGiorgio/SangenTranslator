@@ -13,6 +13,8 @@
 		el.innerHTML = '<span style="font-family: \'dragonConlang_blocky\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'icon-nameSignifier_begining': '&#x3c;',
+		'icon-nameSignifier_end': '&#x3e;',
 		'icon-u': '&#x259;',
 		'icon-U': '&#x26f;',
 		'icon-o': '&#x6f;',

@@ -95,6 +95,8 @@ function translateToSangen(englishText, toSangenDictionary, translatedTextElemen
 		switch(englishText.charAt(0)) {
 			case ",": // fallthrough is intentional
 			case ".":
+			case "<":
+			case ">":
 				translation.push([englishText.charAt(0)]);
 			case " ": // fallthrough is intentional
 				englishText = englishText.substring(1);
@@ -128,10 +130,11 @@ function translationToHTML(translation, translatedTextElement) {
 		// if this is a noletter entry, then we don't want a space
 		if(space || !translatedWord[0].startsWith('noletter'))
 			translatedTextElement.appendChild(makeSpaceElement());
-		if(!translatedWord[0].startsWith('noletter'))
-			space = true;
-		else 
+				
+		if(translatedWord[0].startsWith('noletter'))
 			space = false;
+		else 
+			space = true;
 	
 		if(translatedWord.length == 1) {
 			var wordElement = document.createElement("SPAN");

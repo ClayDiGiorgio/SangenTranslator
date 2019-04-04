@@ -9,6 +9,7 @@ function formatSangen(inputString) {
 	
 	//inputString.replace("\\.", " \\.");
 	
+	// punctuation 
 	inputString = inputString.replace(/ \./g, "q");
 	inputString = inputString.replace(/\./g, "q");
 	inputString = inputString.replace(/q/g, " .");
@@ -17,6 +18,11 @@ function formatSangen(inputString) {
 	inputString = inputString.replace(/,/g, "q");
 	inputString = inputString.replace(/q/g, " ,");
 	
+	inputString = inputString.replace(/\< /g, "<");
+	inputString = inputString.replace(/ \>/g, ">");
+	
+	
+	// numbers
 	inputString = inputString.replace(/00/g, "0_");
 	inputString = inputString.replace(/_0/g, "__");
 	
