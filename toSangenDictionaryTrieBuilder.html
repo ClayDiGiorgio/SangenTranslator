@@ -46,7 +46,7 @@
 			
 			for(var i = 0; i < entries.length; i++) {
 				var entry = entries[i].split("\t"); // array of entries in a row
-				var sangenWord = entry.shift(); // the sangen word
+				var sangenWord = entry.shift().toLowerCase(); // the sangen word
 				
 				if(sangenWord == "" || sangenWord == undefined) {
 					continue;
@@ -73,6 +73,10 @@
 				
 				// insert the Sangen word at each of the translation interperetations
 				for(var k = 0; k < interpretations.length; k++) {
+					// if the interperetation starts or ends with a space, kill that space
+					interpretations[k] = interpretations[k].toLowerCase().replace(/^ /, "").replace(/ $/, "");
+					interpretations[k] = interpretations[k].replace(/\-|\_/, " "); // replace dashes and underscores with spaces
+					
 					trieInsert(trie, interpretations[k], [sangenWord]);
 				}
 			}

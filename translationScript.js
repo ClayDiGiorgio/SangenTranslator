@@ -58,13 +58,47 @@ function translateFromSangen(conlangText, toEnglishDictionary, translatedTextEle
 
 function translateToSangen(englishText, toSangenDictionary, translatedTextElement) {
 	let translation = [];
-	englishText = englishText.toLowerCase().replace(/\./g, "").replace(/,/g, ""); // sanitize
+	englishText = englishText.toLowerCase();//.replace(/\./g, "").replace(/,/g, ""); // sanitize
+	
+	// TODO: unconjugate verbs, doing both regular and irregular
+	// found here: https://en.wikipedia.org/wiki/List_of_English_irregular_verbs
+	// or here: https://www.online-languages.info/english/irregular_verbs.php?l=1
+	// or even here: https://www.scientificpsychic.com/verbs1.html
+	
 	console.log("---------------\n"+englishText);
 	
+	//
+	// make verbs to be infinitive form
+	//
+	englishText = englishText.replace(/\./g, " ").replace(/,/g, " ");
+	englishTextWords = englishText.split(" ");
+	englishText = "";
+	englishTextWords.forEach(function(word) {
+		let retval = trieGet(irregularEnglishVerbs, word);
+		
+		console.log("\t\t" + word);
+		
+		if(retval[0].startsWith("noentry") || retval[0].startsWith("nodefinition")) {
+			englishText += word + " ";
+		} else {
+			englishText += "to " + retval[0] + " ";
+		}
+	});
+	
+	console.log(englishText + "\n");
+	
+	//
+	// translate
+	//
+	
 	while(englishText != "") {
-		if(englishText.charAt(0) == " ") {
-			englishText = englishText.substring(1);
-			continue;
+		switch(englishText.charAt(0)) {
+			case ",": // fallthrough is intentional
+			case ".":
+				translation.push([englishText.charAt(0)]);
+			case " ": // fallthrough is intentional
+				englishText = englishText.substring(1);
+				continue;
 		}
 	
 		let retrieval = trieGetLongestPrefix(toSangenDictionary, englishText);
@@ -86,11 +120,22 @@ function translateToSangen(englishText, toSangenDictionary, translatedTextElemen
 function translationToHTML(translation, translatedTextElement) {
 	translatedTextElement.appendChild(makeSpaceElement());
 	
+	let space = false;
+	
 	translation.forEach(function(translatedWord) {
 		if(translatedWord == undefined) return;
 	
+		// if this is a noletter entry, then we don't want a space
+		if(space || !translatedWord[0].startsWith('noletter'))
+			translatedTextElement.appendChild(makeSpaceElement());
+		if(!translatedWord[0].startsWith('noletter'))
+			space = true;
+		else 
+			space = false;
+	
 		if(translatedWord.length == 1) {
 			var wordElement = document.createElement("SPAN");
+			if(translatedWord[0].charAt(0) != '.' && translatedWord[0].charAt(0) != ',')
 			wordElement.className = "translated-word-single";
 			wordElement.innerText = " " + translatedWord[0].replace(/\(.\) /, "") + " ";
 			translatedTextElement.appendChild(wordElement);
@@ -109,8 +154,6 @@ function translationToHTML(translation, translatedTextElement) {
 			
 			translatedTextElement.appendChild(dropdownParent);
 		}
-		
-		translatedTextElement.appendChild(makeSpaceElement());
 	});
 }
 
@@ -177,59 +220,6 @@ function trieGetLongestPrefix(trie, key) {
 	return {"data":data, "remaining":remain };
 }
 
-/*
-function startRead() {
-  // obtain input element through DOM
-
-  var file = document.getElementById('dictionary_toEnglish');
-  if(file){
-    return getAsText(file);
-  }
-}
-
-function getAsText(readFile) {
-
-  var reader = new FileReader();
-
-  // Read file into memory as UTF-16
-  reader.readAsText(readFile, "UTF-16");
-
-  // Handle progress, success, and errors
-  reader.onprogress = updateProgress;
-  reader.onload = loaded;
-  reader.onerror = errorHandler;
-}
-
-function updateProgress(evt) {
-  if (evt.lengthComputable) {
-    // evt.loaded and evt.total are ProgressEvent properties
-    var loaded = (evt.loaded / evt.total);
-    if (loaded < 1) {
-      // Increase the prog bar length
-      // style.width = (loaded * 200) + "px";
-    }
-  }
-}
-
-function loaded(evt) {
-  // Obtain the read file data
-  var fileString = evt.target.result;
-  // Handle UTF-16 file dump
-  if(utils.regexp.isChinese(fileString)) {
-    //Chinese Characters + Name validation
-  }
-  else {
-    // run other charset test
-  }
-  // xhr.send(fileString)
-}
-
-function errorHandler(evt) {
-  if(evt.target.error.name == "NotReadableError") {
-    // The file could not be read
-  }
-}
-*/
 
 /*
 

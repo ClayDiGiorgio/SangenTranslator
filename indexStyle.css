@@ -1,0 +1,24 @@
+.link-bar {
+	background:lightGreen;
+	padding:12px;
+	display:flex;
+}
+
+.navigation-link, .horizontal-spacer {
+	color:white;
+	background-image: linear-gradient(green, darkGreen);
+	padding:10px;
+	text-decoration:none;
+	display:flex;
+	white-space: nowrap;
+}
+
+.navigation-link:hover {
+	background-image: linear-gradient(darkGreen, green);
+}
+
+
+.horizontal-spacer{
+	width:100%;
+}
+
