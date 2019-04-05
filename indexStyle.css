@@ -9,8 +9,8 @@
 */
 
 .link-bar {
-	background:lightGreen;
-	padding:12px;
+	background:linear-gradient(green, darkGreen);
+	padding:0px;
 	display:flex;
 }
 
@@ -58,5 +58,19 @@ body {
 .content-wrapper {
 	background:linear-gradient(lightGreen, white);
     height: 100%;
+    text-align:center;
+}
+
+.content-inner-wrapper {
+	background:white;
+    margin:auto;
+    height: 90%;
+    width: 90%;
+    
+    border:2px solid black;
+    border-radius:10px;
+    
+    text-align:left;
+    padding:10px;
 }
 
