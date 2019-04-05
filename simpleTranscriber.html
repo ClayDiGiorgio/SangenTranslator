@@ -9,27 +9,40 @@
 		
 		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
 		<link rel="stylesheet" href="font_blocky/style.css">
-		<title>Simple Transcriber</title>
+		
+		<link rel="stylesheet" href="indexStyle.css">
+		
+		<title>Sangen Transcriber</title>
 	</head>
 	<body>
-		<p>
-			<h1>Transcriber</h1>
-		</p>
-		<p>
-			Please write in Sangen using either Latin shorthand spelling, IPA characters, or a mix of the two (eg "sXakeS" or "sχakeʃ")
-		</p>
-		<p>
-			Your input:
-			<input id="conlang input" name="user input" value="gunis oasXeja gosonis.">
-		</p>
-		<p>
+		<div class="header-wrapper">
+			<h1>Sangen Transcriber</h1>
+			<!--
 			<p>
-				Transcription of your input: 
+				This page will take phonetic Sangen and transcribe it into the language's proper writing.
 			</p>
-			<p>
-				<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis .</font>
-			</p>
-		</p>
+			-->
+		</div>
+		
+		<div class="content-wrapper">
+			<div class="content-inner-wrapper">
+				<p>
+					Please write in Sangen using either Latin shorthand spelling, IPA characters, or a mix of the two (eg "sXakeS" or "sχakeʃ")
+				</p>
+				<p>
+					Your input:
+					<input id="conlang input" name="user input" value="gunis oasXeja gosonis, <kin ʃiʃ>.">
+				</p>
+				<p>
+					<p>
+						Transcription of your input: 
+					</p>
+					<p>
+						<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis , &lt;kin ʃiʃ&gt; .</font>
+					</p>
+				</p>
+			</div>
+		</div>
 	</body>
 	<script src="transcriber.js"></script>
 	<script>

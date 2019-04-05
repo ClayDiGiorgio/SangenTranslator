@@ -10,49 +10,59 @@
 		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
 		<link rel="stylesheet" href="font_blocky/style.css">
 		<link rel="stylesheet" href="style.css" type="text/css">
+		<link rel="stylesheet" href="indexStyle.css" type="text/css">
 		
 		<title>Simple Translator</title>
 	</head>
 	<body>
-		<p>
-			<h1>From English to Sangen Translator</h1>
-		</p>
-		<p>
-			Please write in English, then click the translate button!
-		</p>
-		<p>
-			Your input:
-			<textarea id="english input" name="user input" class="english-input">You to be a dumb egg.</textarea>
-		</p>
-		<p>
-			<button id="translate input">Translate</button>
-		</p>
-		<p>
-			<p class="label">
-				<h3>Translation of your input</h3>
+		<div class="header-wrapper">
+			<h1>English to Sangen Translator</h1>
+			<!--
+			<p>
+				This page will translate English text roughly into Sangen.
 			</p>
-			<div class="output output-outer">
-				<div class="output output-inner translated-text-parent">
-					<div class="output output-inner-padding translated-text-parent">
-						<span id="translated text" class="translated-text-parent">
+			-->
+		</div>
+		<div class="content-wrapper">
+			<div class="content-inner-wrapper">
+				<p>
+					Please write in English, then click the translate button!
+				</p>
+				<p>
+					<textarea id="english input" name="user input" class="english-input">You to be a dumb egg.</textarea>
+				</p>
+				<p>
+					<button id="translate input">Translate</button>
+				</p>
+				<p>
+					<p class="label">
+						<h3>Translation of your input</h3>
+					</p>
+					<div class="output output-outer">
+						<div class="output output-inner translated-text-parent">
+							<div class="output output-inner-padding translated-text-parent">
+								<span id="translated text" class="translated-text-parent">
 							
-						</span>
+								</span>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</p>
-		<p>
-			<p class="label">
-				<h3>Transcription of the translation: </h3>
-			</p>
-			<div class="output output-outer">
-				<div class="output output-inner">
-					<div class="output output-inner-padding">
-						<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis .</font>
+				</p>
+				<p>
+					<p class="label">
+						<h3>Transcription of the translation: </h3>
+					</p>
+					<div class="output output-outer">
+						<div class="output output-inner">
+							<div class="output output-inner-padding">
+								<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis .</font>
+							</div>
+						</div>
 					</div>
-				</div>
+				</p>
+		
 			</div>
-		</p>
+		</div>
 	</body>
 	<script src="dictionary_toSangen.js"></script>
 	<script src="irregularEnglishVerbs.js"></script>

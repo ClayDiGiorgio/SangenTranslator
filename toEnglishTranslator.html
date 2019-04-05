@@ -10,49 +10,59 @@
 		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
 		<link rel="stylesheet" href="font_blocky/style.css">
 		<link rel="stylesheet" href="style.css" type="text/css">
+		<link rel="stylesheet" href="indexStyle.css" type="text/css">
 		
 		<title>Simple Translator</title>
 	</head>
 	<body>
-		<p>
-			<h1>Translator</h1>
-		</p>
-		<p>
-			Please write in Sangen using either English phonetic spelling, IPA characters, or a mix of the two (eg "sXakeS" or "sXakeʃ")
-		</p>
-		<p>
-			Your input:
-			<textarea id="conlang input" name="user input" class="conlang-input"> gənis oasXeja gosonis. </textarea>
-		</p>
-		<p>
-			<button id="translate input">Translate</button>
-		</p>
-		<p>
-			<p class="label">
-				<h3>Transcription of your input: </h3>
+		<div class="header-wrapper">
+			<h1>Sangen to English Translator</h1>
+			<!--
+			<p>
+				This page will translate Sangen text roughly into English.
 			</p>
-			<div class="output output-outer">
-				<div class="output output-inner">
-					<div class="output output-inner-padding">
-						<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis .</font>
+			-->
+		</div>
+		
+		<div class="content-wrapper">
+			<div class="content-inner-wrapper">
+				<p>
+					Please write in Sangen using either English phonetic spelling, IPA characters, or a mix of the two (eg "sXakeS" or "sXakeʃ")
+				</p>
+				<p>
+					<textarea id="conlang input" name="user input" class="conlang-input"> gənis oasXeja gosonis, &lt;kin ʃiʃ&gt;. </textarea>
+				</p>
+				<p>
+					<button id="translate input">Translate</button>
+				</p>
+				<p>
+					<p class="label">
+						<h3>Transcription of your input: </h3>
+					</p>
+					<div class="output output-outer">
+						<div class="output output-inner">
+							<div class="output output-inner-padding">
+								<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis , &lt;kin ʃiʃ&gt; .</font>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</p>
-		<p>
-			<p class="label">
-				<h3>Translation of your input</h3>
-			</p>
-			<div class="output output-outer">
-				<div class="output output-inner translated-text-parent">
-					<div class="output output-inner-padding translated-text-parent">
-						<span id="translated text" class="translated-text-parent">
-					
-						</span>
+				</p>
+				<p>
+					<p class="label">
+						<h3>Translation of your input</h3>
+					</p>
+					<div class="output output-outer">
+						<div class="output output-inner translated-text-parent">
+							<div class="output output-inner-padding translated-text-parent">
+								<span id="translated text" class="translated-text-parent">
+							
+								</span>
+							</div>
+						</div>
 					</div>
-				</div>
+				</p>
 			</div>
-		</p>
+		</div>
 	</body>
 	<script src="dictionary_toEnglish.js"></script>
 	<script src="translationScript.js"></script>
@@ -76,8 +86,8 @@
 	<script name="translator">
 		const translationText = document.getElementById('translated text');
 		const button = document.getElementById('translate input');
-		translateFromSangen(userInput.value, dictionary, translationText);
-
+		//translateFromSangen(userInput.value, dictionary, translationText);
+		
 		button.addEventListener('click', function (event) {
 			// clear the previous translation
 			var total = translationText.children.length
@@ -89,6 +99,9 @@
 			var translation = translateFromSangen(userInput.value, dictionary, translation);
 			translationToHTML(translation, translationText);
 		});
+	</script>
+	<script>
+		translationToHTML([["you"],["are"], ["a dumb egg"], [","], ["Metal Tree"]], translationText);
 	</script>
 </html>
 
