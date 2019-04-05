@@ -61,16 +61,19 @@ body {
     text-align:center;
 }
 
-.content-inner-wrapper {
+.content-inner-wrapper, .header-description {
 	background:white;
-    margin:auto;
-    height: 90%;
-    width: 90%;
     
     border:2px solid black;
     border-radius:10px;
     
     text-align:left;
     padding:10px;
+}
+
+.content-inner-wrapper {
+    margin:auto;
+    height: 90%;
+    width: 90%;
 }
 
