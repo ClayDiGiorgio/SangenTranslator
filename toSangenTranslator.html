@@ -54,14 +54,16 @@
 					</p>
 					<div class="output output-outer">
 						<div class="output output-inner">
-							<div class="output output-inner-padding">
+							<div class="output output-inner-padding" id="transcribed text">
+								<!--
 								<font face='dragonConlang_blocky' size=20 id="transcribed text">gənis oasXeja gosonis .</font>
+								-->
 							</div>
 						</div>
 					</div>
 				</p>
-		
 			</div>
+			
 		</div>
 	</body>
 	<script src="dictionary_toSangen.js"></script>
@@ -69,6 +71,7 @@
 	
 	<script src="translationScript.js"></script>
 	<script src="transcriber.js"></script>
+	
 	<script name="translator">
 		const userInput       = document.getElementById('english input');
 		const translationText = document.getElementById('translated text');
@@ -104,8 +107,11 @@
 				
 				transStr += " " + word;
 			});
-			transStr = formatSangen(transStr);
-			transcription.innerText = transStr;
+			
+			//transStr = formatSangen(transStr);
+			buildTranscriptionHTML(transcription, transStr);
+			
+			//transcription.innerText = transStr;
 		});
 	</script>
 </html>

@@ -70,7 +70,7 @@ function translateToSangen(englishText, toSangenDictionary, translatedTextElemen
 	//
 	// make verbs to be infinitive form
 	//
-	englishText = englishText.replace(/\./g, " ").replace(/,/g, " ");
+	englishText = englishText.replace(/\./g, " .").replace(/,/g, " ,");
 	englishTextWords = englishText.split(" ");
 	englishText = "";
 	englishTextWords.forEach(function(word) {
@@ -104,6 +104,18 @@ function translateToSangen(englishText, toSangenDictionary, translatedTextElemen
 		}
 	
 		let retrieval = trieGetLongestPrefix(toSangenDictionary, englishText);
+		
+		// if the retrieval failed to get a single letter, that means that the
+		// whole next word isn't in the trie, this allows the translator to
+		// recognize and report that
+		if(retrieval.data[0].match(/noletter_\w/)) {
+			let wordEnd = englishText.indexOf(" ");
+			if(!englishText.charAt(wordEnd-1).match(/\w/)) wordEnd--;
+			
+			retrieval.remaining = englishText.substring(wordEnd);
+			retrieval.data = trieGet(toSangenDictionary, englishText.substring(0, wordEnd));
+		}
+		
 		englishText = retrieval.remaining;
 		translation.push(retrieval.data);
 		

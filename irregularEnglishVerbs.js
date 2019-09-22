@@ -132,7 +132,15 @@ var irregularEnglishVerbs = {
 				}
 			}
 		},
+		"m": {
+			"values": ["be"]
+		},
 		"r": {
+			"e": { 
+				"values": [
+					"be"
+				] 
+			},
 			"o": {
 				"s": {
 					"e": {
@@ -1798,6 +1806,11 @@ var irregularEnglishVerbs = {
 		}
 	},
 	"w": {
+		"a": { 
+			"s": {
+				"values":["be"]
+			}
+		},
 		"e": {
 			"r": {
 				"e": {

@@ -80,6 +80,21 @@ body {
 }
 
 /*
+  transcription stuff
+*/
+
+.transcribed-sangen-text_failed-translation {
+	font-family:"Arial";
+	font-size:30px;
+	vertical-align: center;
+}
+
+.transcribed-sangen-text {
+	font-family:"dragonConlang_blocky";
+	font-size:40px;
+}
+
+/*
   mobile formatting, code from
   https://stackoverflow.com/questions/16550485/hide-div-tag-on-mobile-view-only
 */
